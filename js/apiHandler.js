@@ -11,7 +11,6 @@ export function getApiKey() {
 
 export async function apiRequest(endpoint, params = {}) {
     if (!API_KEY) API_KEY = getApiKey();
-    console.log("Clé API utilisée :", API_KEY);
 
     const url = new URL(`https://${API_HOST}${endpoint}`);
     Object.entries(params).forEach(([k, v]) => {
@@ -27,13 +26,9 @@ export async function apiRequest(endpoint, params = {}) {
             "X-RapidAPI-Key": API_KEY
         }
     });
-    console.log("URL appelée :", url.toString());
-    console.log("Réponse brute :", res);
+    
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
-
-
-
 }
 
 
