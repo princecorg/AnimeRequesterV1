@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon/favicon.png" type="image/x-icon">
+    <title>Anime Requester V1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>ANIME REQUESTER</h1>
+
+        <div class="form-section">
+            <div class="form-row">
+                <label for="endpoint">Choisissez un type de recherche :</label>
+                <select id="endpoint">
+                    <option value="search">Recherche par titre</option>
+                    <option value="by-id">Recherche par ID</option>
+                    <option value="by-ranking">Recherche par rang</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="param">Paramètre :</label>
+                <input type="text" id="param" placeholder="Titre, ID ou classement">
+            </div>
+
+            <div class="button-group">
+                <button id="searchBtn">Rechercher</button>
+                <button id="clearBtn">Effacer</button>
+            </div>
+        </div>
+
+
+        <div id="results"></div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
