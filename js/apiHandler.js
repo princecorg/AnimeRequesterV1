@@ -9,13 +9,14 @@ export function getApiKey() {
     return API_KEY;
 }
 
+// Requête API : nécessite l'hôte, l'endpoint (titre, rang, classement) et les paramètres
 export async function apiRequest(endpoint, params = {}) {
     if (!API_KEY) API_KEY = getApiKey();
 
     const url = new URL(`https://${API_HOST}${endpoint}`);
-    Object.entries(params).forEach(([k, v]) => {
-        if (v !== undefined && v !== null && v !== '') {
-            url.searchParams.append(k, v);
+    Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined && value !== null && value !== '') {
+            url.searchParams.append(key, value);
         }
     });
 
