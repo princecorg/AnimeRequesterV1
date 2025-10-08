@@ -1,5 +1,6 @@
 let API_KEY = null;
 const API_HOST = "anime-db.p.rapidapi.com";
+let SIZE = 10;
 
 export function getApiKey() {
     if (!API_KEY) {
@@ -45,7 +46,7 @@ export function setupSearchButton(displayResults) {
             switch (endpoint) {
                 case 'search':
                     if (!val) throw new Error('Entrez un titre.');
-                    result = await apiRequest('/anime', { search: val, page: 1, size: 25 });
+                    result = await apiRequest('/anime', { search: val, page: 1, size: SIZE });
                     break;
                 case 'by-id':
                     if (!val) throw new Error('Entrez un ID.');

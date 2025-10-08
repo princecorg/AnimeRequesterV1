@@ -5,7 +5,7 @@ export function displayResults(result, container) {
 
     // Cas 1 : recherche par titre → result.data = tableau
     if (result.data && Array.isArray(result.data)) {
-        animeList = result.data.slice(0, 10);
+        animeList = result.data;
     }
     // Cas 2 : recherche par ID ou par ranking → result = objet unique
     else if (result && typeof result === 'object') {
